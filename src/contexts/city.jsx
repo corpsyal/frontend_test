@@ -3,7 +3,7 @@ import { fetchCities } from '../services/city'
 
 const defaultContext = {
     cities: [],
-    loading: true
+    loading: true // personal choice, some people prefer to init with false
 }
 
 export const CityContext = React.createContext(defaultContext)
@@ -25,7 +25,8 @@ export const CityProvider = ({ children }) => {
 
     React.useEffect(() => {
         initCities()
-    }, [])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []) // no dependencies to use like componentDidMount
 
     return (
         <CityContext.Provider value={context}>
