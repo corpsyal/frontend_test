@@ -1,5 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types';
+import { cityPropTypes } from '../../constants/city';
 
 const Wrapper = styled.div`
     border: 1px solid lightgrey;
@@ -24,5 +26,11 @@ const CityListItem = ({city, onCityChange, isSelected}) => {
         </Wrapper>
     )
 }
+
+CityListItem.propTypes = {
+    city: cityPropTypes,
+    onCityChange: PropTypes.func,
+    isSelected: PropTypes.bool,
+};
 
 export default CityListItem

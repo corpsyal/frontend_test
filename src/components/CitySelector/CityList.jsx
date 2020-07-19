@@ -1,8 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types';
 import CityListItem from './CityListItem'
 import useCity from '../../hooks/useCity'
-import { uniqCityId, isSelected } from '../../constants/city'
+import { uniqCityId, isSelected, cityPropTypes } from '../../constants/city'
 
 
 const Wrapper = styled.div`
@@ -31,5 +32,10 @@ const CityList = ({ selectedCity, onCityChange }) => {
         </Wrapper>
     )
 }
+
+CityList.propTypes = {
+    selectedCity: cityPropTypes,
+    onCityChange: PropTypes.func
+};
 
 export default CityList

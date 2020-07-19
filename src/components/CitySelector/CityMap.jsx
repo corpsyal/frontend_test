@@ -1,6 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import { cityPropTypes } from '../../constants/city'
 
 const Wrapper = styled.div`
     flex: 3;
@@ -26,5 +28,10 @@ const CityMap = ({ position, city }) => {
         </Wrapper>
     )
 }
+
+CityMap.propTypes = {
+    city: cityPropTypes,
+    position: PropTypes.arrayOf(PropTypes.number)
+};
 
 export default CityMap

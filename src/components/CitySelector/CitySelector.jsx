@@ -1,8 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types';
 import CityList from './CityList'
 import CityMap from './CityMap'
-
 
 const Wrapper = styled.div`
     border: 1px solid lightgrey;
@@ -29,5 +29,10 @@ const CitySelector = ({ onChange }) => {
         </Wrapper>
     )
 }
+
+CitySelector.propTypes = {
+    onChange: PropTypes.func
+};
+  
 
 export default CitySelector
