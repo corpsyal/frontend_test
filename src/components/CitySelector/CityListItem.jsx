@@ -8,13 +8,13 @@ const Wrapper = styled.div`
     align-items: center;
     height: 64px;
     margin-bottom: 8px;
-
+    cursor: pointer;
 `
 
-const CityListItem = () => {
+const CityListItem = ({city}) => {
     return (
         <Wrapper>
-            Chicago
+            <span>{city}</span>
         </Wrapper>
     )
 }
