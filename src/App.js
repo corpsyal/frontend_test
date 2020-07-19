@@ -8,12 +8,16 @@ const Wrapper = styled.div`
   width: 1000px;
 `
 
-const App = () => (
-  <Wrapper>
-    <CityProvider>
-      <CitySelector />
-    </CityProvider>
-  </Wrapper>
-)
+const App = () => {
+  const onCityChange = React.useCallback(city => console.log(city), [])
+
+  return (
+    <Wrapper>
+      <CityProvider>
+        <CitySelector onChange={onCityChange} />
+      </CityProvider>
+    </Wrapper>
+  )
+}
 
 export default App;

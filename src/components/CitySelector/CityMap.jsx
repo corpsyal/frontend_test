@@ -12,18 +12,15 @@ const Wrapper = styled.div`
     }
 `
 
-const position = [51.505, -0.09]
-
-const CityMap = () => {
+const CityMap = ({ position, city }) => {
     return (
         <Wrapper>
             <Map center={position} zoom={13}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                 />
                 <Marker position={position}>
-                    <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
+                    <Popup>{city.city}</Popup>
                 </Marker>
             </Map>
         </Wrapper>

@@ -9,12 +9,18 @@ const Wrapper = styled.div`
     height: 64px;
     margin-bottom: 8px;
     cursor: pointer;
+
+    ${({isSelected}) => isSelected && `
+        background-color: lightgrey;
+    `}
 `
 
-const CityListItem = ({city}) => {
+const CityListItem = ({city, onCityChange, isSelected}) => {
+    const handleClick = React.useCallback(() => onCityChange(city), [onCityChange, city])
+
     return (
-        <Wrapper>
-            <span>{city}</span>
+        <Wrapper onClick={handleClick} isSelected={isSelected}>
+            <span>{city.city}</span>
         </Wrapper>
     )
 }
