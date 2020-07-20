@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const DEFAULT_LENGTH = 50
+export const DEFAULT_LENGTH = 1000
 
 export const uniqCityId = ({city, latitude, longitude}) => `${city}-${latitude}-${longitude}` // to prevent city with same name
 
